@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="OpenRateProvWS" resourceRoot="" soapui-version="4.5.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="OpenRateProvWSImplServiceSoapBinding" type="wsdl" bindingName="{http://WS.OpenRate/}OpenRateProvWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/OpenRateProvWS/OpenRateProvWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/OpenRateProvWS/OpenRateProvWS?wsdl"><con:part><con:url>http://localhost:8080/OpenRateProvWS/OpenRateProvWS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OpenRateProvWSImplService" targetNamespace="http://WS.OpenRate/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://WS.OpenRate/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://WS.OpenRate/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="createAlias" type="tns:createAlias"/>
+      <xs:element name="createAliasResponse" type="tns:createAliasResponse"/>
+      <xs:element name="createCustomer" type="tns:createCustomer"/>
+      <xs:element name="createCustomerResponse" type="tns:createCustomerResponse"/>
+      <xs:element name="createERA" type="tns:createERA"/>
+      <xs:element name="createERAResponse" type="tns:createERAResponse"/>
+      <xs:element name="createProduct" type="tns:createProduct"/>
+      <xs:element name="createProductResponse" type="tns:createProductResponse"/>
+      <xs:element name="createProducts" type="tns:createProducts"/>
+      <xs:element name="createProductsResponse" type="tns:createProductsResponse"/>
+      <xs:element name="deleteERA" type="tns:deleteERA"/>
+      <xs:element name="deleteERAResponse" type="tns:deleteERAResponse"/>
+      <xs:element name="getAlias" type="tns:getAlias"/>
+      <xs:element name="getAliasResponse" type="tns:getAliasResponse"/>
+      <xs:element name="getCustomer" type="tns:getCustomer"/>
+      <xs:element name="getCustomerResponse" type="tns:getCustomerResponse"/>
+      <xs:element name="getERA" type="tns:getERA"/>
+      <xs:element name="getERAResponse" type="tns:getERAResponse"/>
+      <xs:element name="getProduct" type="tns:getProduct"/>
+      <xs:element name="getProductResponse" type="tns:getProductResponse"/>
+      <xs:element name="modifyAlias" type="tns:modifyAlias"/>
+      <xs:element name="modifyAliasResponse" type="tns:modifyAliasResponse"/>
+      <xs:element name="modifyCustomer" type="tns:modifyCustomer"/>
+      <xs:element name="modifyCustomerResponse" type="tns:modifyCustomerResponse"/>
+      <xs:element name="modifyERA" type="tns:modifyERA"/>
+      <xs:element name="modifyERAResponse" type="tns:modifyERAResponse"/>
+      <xs:element name="modifyProduct" type="tns:modifyProduct"/>
+      <xs:element name="modifyProductResponse" type="tns:modifyProductResponse"/>
+      <xs:element name="sayHi" type="tns:sayHi"/>
+      <xs:element name="sayHiResponse" type="tns:sayHiResponse"/>
+      <xs:complexType name="modifyERA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ERAName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ERAValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyERAResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="methodReturnTypeObj">
+        <xs:sequence>
+          <xs:element name="clientID" type="xs:long"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element name="returnCode" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProductResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createERA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ERAName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ERAValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createERAResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createAlias">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustId" type="xs:long"/>
+          <xs:element minOccurs="0" name="Alias" type="xs:string"/>
+          <xs:element minOccurs="0" name="Subscription" type="xs:string"/>
+          <xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createAliasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProductResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAlias">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustId" type="xs:long"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAliasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:enquiryMethodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enquiryMethodReturnTypeObj">
+        <xs:complexContent>
+          <xs:extension base="tns:methodReturnTypeObj">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="activationDate" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="deactivationDate" type="xs:dateTime"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="objectList" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustId" type="xs:long"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCustomerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:enquiryMethodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyAlias">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustId" type="xs:long"/>
+          <xs:element minOccurs="0" name="Alias" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyAliasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyProduct">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ProductName" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyProductResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sayHi">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sayHiResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProducts">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ProductName" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubscriptionID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createProductsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteERA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="ERAName" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteERAResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getERA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustID" type="xs:long"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getERAResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element name="CustId" type="xs:long"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modifyCustomerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSN" type="xs:string"/>
+          <xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeactivationDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createCustomerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:methodReturnTypeObj"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAliasResponse">
+    <wsdl:part element="tns:getAliasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteERA">
+    <wsdl:part element="tns:deleteERA" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getERAResponse">
+    <wsdl:part element="tns:getERAResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCustomerResponse">
+    <wsdl:part element="tns:createCustomerResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductResponse">
+    <wsdl:part element="tns:getProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAlias">
+    <wsdl:part element="tns:modifyAlias" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProduct">
+    <wsdl:part element="tns:createProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomer">
+    <wsdl:part element="tns:getCustomer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyCustomer">
+    <wsdl:part element="tns:modifyCustomer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createERAResponse">
+    <wsdl:part element="tns:createERAResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyERA">
+    <wsdl:part element="tns:modifyERA" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createAlias">
+    <wsdl:part element="tns:createAlias" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProduct">
+    <wsdl:part element="tns:getProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createERA">
+    <wsdl:part element="tns:createERA" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteERAResponse">
+    <wsdl:part element="tns:deleteERAResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAlias">
+    <wsdl:part element="tns:getAlias" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomerResponse">
+    <wsdl:part element="tns:getCustomerResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProductResponse">
+    <wsdl:part element="tns:createProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyCustomerResponse">
+    <wsdl:part element="tns:modifyCustomerResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProducts">
+    <wsdl:part element="tns:createProducts" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCustomer">
+    <wsdl:part element="tns:createCustomer" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyProduct">
+    <wsdl:part element="tns:modifyProduct" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHiResponse">
+    <wsdl:part element="tns:sayHiResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyERAResponse">
+    <wsdl:part element="tns:modifyERAResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getERA">
+    <wsdl:part element="tns:getERA" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyAliasResponse">
+    <wsdl:part element="tns:modifyAliasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHi">
+    <wsdl:part element="tns:sayHi" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createAliasResponse">
+    <wsdl:part element="tns:createAliasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifyProductResponse">
+    <wsdl:part element="tns:modifyProductResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProductsResponse">
+    <wsdl:part element="tns:createProductsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OpenRateProvWS">
+    <wsdl:operation name="modifyERA">
+      <wsdl:input message="tns:modifyERA" name="modifyERA"></wsdl:input>
+      <wsdl:output message="tns:modifyERAResponse" name="modifyERAResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <wsdl:input message="tns:createProduct" name="createProduct"></wsdl:input>
+      <wsdl:output message="tns:createProductResponse" name="createProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createERA">
+      <wsdl:input message="tns:createERA" name="createERA"></wsdl:input>
+      <wsdl:output message="tns:createERAResponse" name="createERAResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createAlias">
+      <wsdl:input message="tns:createAlias" name="createAlias"></wsdl:input>
+      <wsdl:output message="tns:createAliasResponse" name="createAliasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdl:input message="tns:getProduct" name="getProduct"></wsdl:input>
+      <wsdl:output message="tns:getProductResponse" name="getProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlias">
+      <wsdl:input message="tns:getAlias" name="getAlias"></wsdl:input>
+      <wsdl:output message="tns:getAliasResponse" name="getAliasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomer">
+      <wsdl:input message="tns:getCustomer" name="getCustomer"></wsdl:input>
+      <wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAlias">
+      <wsdl:input message="tns:modifyAlias" name="modifyAlias"></wsdl:input>
+      <wsdl:output message="tns:modifyAliasResponse" name="modifyAliasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyProduct">
+      <wsdl:input message="tns:modifyProduct" name="modifyProduct"></wsdl:input>
+      <wsdl:output message="tns:modifyProductResponse" name="modifyProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHi">
+      <wsdl:input message="tns:sayHi" name="sayHi"></wsdl:input>
+      <wsdl:output message="tns:sayHiResponse" name="sayHiResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProducts">
+      <wsdl:input message="tns:createProducts" name="createProducts"></wsdl:input>
+      <wsdl:output message="tns:createProductsResponse" name="createProductsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteERA">
+      <wsdl:input message="tns:deleteERA" name="deleteERA"></wsdl:input>
+      <wsdl:output message="tns:deleteERAResponse" name="deleteERAResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getERA">
+      <wsdl:input message="tns:getERA" name="getERA"></wsdl:input>
+      <wsdl:output message="tns:getERAResponse" name="getERAResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyCustomer">
+      <wsdl:input message="tns:modifyCustomer" name="modifyCustomer"></wsdl:input>
+      <wsdl:output message="tns:modifyCustomerResponse" name="modifyCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCustomer">
+      <wsdl:input message="tns:createCustomer" name="createCustomer"></wsdl:input>
+      <wsdl:output message="tns:createCustomerResponse" name="createCustomerResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OpenRateProvWSImplServiceSoapBinding" type="tns:OpenRateProvWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="modifyERA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyERA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyERAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createAlias">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createAlias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAliasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createERA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createERA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createERAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlias">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAlias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAliasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAlias">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyAlias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyAliasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProducts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createProducts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createProductsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHi">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHi">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHiResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteERA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteERA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteERAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getERA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getERA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getERAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCustomer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyCustomer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modifyCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modifyCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpenRateProvWSImplService">
+    <wsdl:port binding="tns:OpenRateProvWSImplServiceSoapBinding" name="OpenRateProvWSImplPort">
+      <soap:address location="http://localhost:8080/OpenRateProvWS/OpenRateProvWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="createAlias" bindingOperationName="createAlias" type="Request-Response" outputName="createAliasResponse" inputName="createAlias" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createAlias>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustId>?</CustId>
+         <!--Optional:-->
+         <Alias>?</Alias>
+         <!--Optional:-->
+         <Subscription>?</Subscription>
+         <!--Optional:-->
+         <ActivationDate>?</ActivationDate>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:createAlias>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/createAlias"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createCustomer" bindingOperationName="createCustomer" type="Request-Response" outputName="createCustomerResponse" inputName="createCustomer" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createCustomer>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <!--Optional:-->
+         <ActivationDate>?</ActivationDate>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:createCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/createCustomer"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createERA" bindingOperationName="createERA" type="Request-Response" outputName="createERAResponse" inputName="createERA" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createERA>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <ERAName>?</ERAName>
+         <!--Optional:-->
+         <ERAValue>?</ERAValue>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:createERA>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/createERA"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createProduct" bindingOperationName="createProduct" type="Request-Response" outputName="createProductResponse" inputName="createProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createProduct>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <ProductName>?</ProductName>
+         <!--Optional:-->
+         <SubscriptionID>?</SubscriptionID>
+         <!--Optional:-->
+         <ServiceID>?</ServiceID>
+         <!--Optional:-->
+         <ActivationDate>?</ActivationDate>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:createProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/createProduct"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createProducts" bindingOperationName="createProducts" type="Request-Response" outputName="createProductsResponse" inputName="createProducts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createProducts>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Zero or more repetitions:-->
+         <ProductName>?</ProductName>
+         <!--Optional:-->
+         <SubscriptionID>?</SubscriptionID>
+         <!--Optional:-->
+         <ServiceID>?</ServiceID>
+         <!--Optional:-->
+         <ActivationDate>?</ActivationDate>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:createProducts>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/createProducts"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteERA" bindingOperationName="deleteERA" type="Request-Response" outputName="deleteERAResponse" inputName="deleteERA" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:deleteERA>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <ERAName>?</ERAName>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:deleteERA>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/deleteERA"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAlias" bindingOperationName="getAlias" type="Request-Response" outputName="getAliasResponse" inputName="getAlias" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getAlias>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustId>?</CustId>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:getAlias>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/getAlias"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getCustomer" bindingOperationName="getCustomer" type="Request-Response" outputName="getCustomerResponse" inputName="getCustomer" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getCustomer>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustId>?</CustId>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:getCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/getCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getERA" bindingOperationName="getERA" type="Request-Response" outputName="getERAResponse" inputName="getERA" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getERA>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:getERA>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/getERA"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProduct" bindingOperationName="getProduct" type="Request-Response" outputName="getProductResponse" inputName="getProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getProduct>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:getProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/getProduct"/></con:call></con:operation><con:operation isOneWay="false" action="" name="modifyAlias" bindingOperationName="modifyAlias" type="Request-Response" outputName="modifyAliasResponse" inputName="modifyAlias" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:modifyAlias>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustId>?</CustId>
+         <!--Optional:-->
+         <Alias>?</Alias>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:modifyAlias>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/modifyAlias"/></con:call></con:operation><con:operation isOneWay="false" action="" name="modifyCustomer" bindingOperationName="modifyCustomer" type="Request-Response" outputName="modifyCustomerResponse" inputName="modifyCustomer" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:modifyCustomer>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustId>?</CustId>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:modifyCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/modifyCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="" name="modifyERA" bindingOperationName="modifyERA" type="Request-Response" outputName="modifyERAResponse" inputName="modifyERA" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:modifyERA>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <ERAName>?</ERAName>
+         <!--Optional:-->
+         <ERAValue>?</ERAValue>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:modifyERA>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/modifyERA"/></con:call></con:operation><con:operation isOneWay="false" action="" name="modifyProduct" bindingOperationName="modifyProduct" type="Request-Response" outputName="modifyProductResponse" inputName="modifyProduct" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:modifyProduct>
+         <!--Optional:-->
+         <MSN>?</MSN>
+         <CustID>?</CustID>
+         <!--Optional:-->
+         <ProductName>?</ProductName>
+         <!--Optional:-->
+         <SubscriptionID>?</SubscriptionID>
+         <!--Optional:-->
+         <ActivationDate>?</ActivationDate>
+         <!--Optional:-->
+         <DeactivationDate>?</DeactivationDate>
+         <!--Optional:-->
+         <EffectiveDate>?</EffectiveDate>
+      </ws:modifyProduct>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/modifyProduct"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sayHi" bindingOperationName="sayHi" type="Request-Response" outputName="sayHiResponse" inputName="sayHi" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OpenRateProvWS/OpenRateProvWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://WS.OpenRate/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sayHi>
+         <!--Optional:-->
+         <userName>?</userName>
+      </ws:sayHi>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://WS.OpenRate/OpenRateProvWS/sayHi"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
